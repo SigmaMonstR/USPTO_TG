@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tag grabber</title>
+    <link rel="shortcut icon" href="http://www.aipla.org/committees/committee_pages/Biotechnology/usptobcp/BCP%20Meeting%20Materials/USPTO%20Logo.jpg">
+
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/taglist.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+<!--#LOAD CSS files from OJO-->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.3.5/bootstrap-select.min.css">
+
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link rel="stylesheet" href="css/helpers.css" />
+      <link rel="stylesheet" href="css/layout.css" />
+      <link rel="stylesheet" href="css/gallery.css" />
+      <link rel="stylesheet" href="css/thumbnails.css" />
+      <link rel="stylesheet" href="css/homepage.css" />
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<!-- Mapbox 1.6.1
+	<link href='//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+	-->
+
+	<style type="text/css">
+	    .login {
+	  		float: right;
+	  		text-align: right;
+	  	}     
+		@font-face {
+		  font-family: 'Glyphicons Halflings';
+		  src: url('/fonts/glyphicons-halflings-regular.eot');
+		  src: url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded- opentype'), url('/fonts/glyphicons-halflings-regular.woff') format('woff'), url('Content/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('Content/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+		}
+	      @media (max-width: 980px) {
+	        /* Enable use of floated navbar text */
+	        .navbar-text.pull-right {
+	          float: none;
+	          padding-left: 5px;
+	          padding-right: 5px;
+	        }
+	      }
+		#map {
+		    width: 900px;
+		    height:900px;
+		  }
+		.popup {
+		    text-align: center;
+		}
+		.popup img {
+		    width: 100%;
+		}
+		#filters {
+		    position: absolute;
+		    top: 145px;
+		    left: 10px;
+		    z-index: 100;
+		    padding: 5px;
+		    background: #fff;
+		}
+
+		#filters ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		}
+		
+		.popover.popover-stats {
+		    display: none
+		}
+		
+		.twitter-hashtag-button {
+		      position:relative;
+		      top:6px;
+		  }
+
+
+	</style>
+</head>
+
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                   
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="img\ptobanner.png" height="40"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul >
+          					<li>
+                        <br>
+              					<form style:"color: white;" class="js-form-search form-search" action="/search" method="get" role="search">
+                					<input type="search" name="query" id="query" placeholder="Search"  />
+                					<input type="submit" value="Search" class="page-scroll" Onclick="window.location.href='#photos'"/>
+                            <!--<a id = "export" href = "#" style = "font-size: 12" class = "export">View Tags</a>-->
+                            <a id = "cart" href="#cart_popup" data-toggle="modal" style = "font-size: 12" class = "export">Cart: 0</a>
+                           
+              					</form>
+                       
+          					</li>
+
+                      
+                </ul>
+            </div>
+	
+           
+        </div>
+        
+		
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" >
+            <div class="intro-text">tag grabber</div>
+        </div>
+    </header>
+
+  <!--Gallery + Tag list-->
+	<section class="bg-light-gray" id="photos" >
+      <br>
+      <!--Gallery-->
+      <div class="island" >
+         <div class="js-gallery gallery">
+            <img src="" class="js-gallery__image" />
+            <button class="js-gallery__arrow--left gallery__arrow gallery__arrow--left"></button>
+            <button class="js-gallery__arrow--right gallery__arrow gallery__arrow--right"></button>
+            <br>
+            <br>
+          <div  style="color: grey; font-family: Arial" align="center">Top Tags</div>
+
+            <table id = "myTable" class="myTable" align="center">
+                <tr>
+                    <th width="25%">Double </th>
+                    <th width="25%">Click</th>
+                    <th width="25%">Photos</th>
+                    <th width="25%">To Explore</th>
+                </tr>
+            </table>
+         </div>
+         
+      </div>
+
+      <div class="island thumbnails">
+         <ul class="js-thumbnails__list thumbnails__list"></ul>
+         <ol class="js-thumbnails__pager thumbnails__pager"></ol>
+      </div>
+
+  </section>
+
+
+  <!--Popup-->
+    <section>
+      <div class="portfolio-modal modal fade" id="cart_popup" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                 <div class="container">
+                  <!--Links-->
+                    <div class="row">
+                              <div class="col-lg-8 col-lg-offset-2">
+                                  <div class="modal-body">
+                                      <h2 >Tag Results</h2>
+                                      <table id="url_list" align="left">
+                                            <tr>
+                                                <th width="25%"></th>
+                                                <th width="25%"></th>
+                                                 <th width="25%"></th>
+                                                <th width="25%"></th>
+                                            </tr>
+                                      </table>
+                                      <br>
+                                  </div>
+                              </div>
+
+                      </div>
+                      <!--TAGS-->
+                      <div class="row">
+                          <div class="col-lg-8 col-lg-offset-2" >
+                              <div class="modal-body">
+                                  <div id="myCart"></div>
+                                
+                              </div>
+                          </div>
+
+                  </div>
+                  <div class="row">
+                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close
+                     </button>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  
+      <script src="js/utility.js"></script>
+      <script src="js/gallery.js"></script>
+      <script src="js/flickr.js"></script>
+      <script src="js/main.js"></script>
+	
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+    <!-- Tags -->
+    <script src="js/taglist.js"></script>
+
+
+    <script>
+    //Add item to cart
+      $("#cart").click(function() {
+
+        $("#url_list").empty(); //Clear URL list
+        $('#url_list').append("<h5 style='color: white' align='left'>Selected Photos</h5><br>");
+        //If nothing is in the cart (Section Popup), print instructions
+        if(photo_ids.length==0){
+          var $formrow = '<tr><td><h5 style="color: yellow">Please select at least <strong>1 photo</strong></h6></td></tr>';
+          $('#url_list').append($formrow);
+
+        //Otherwise, push out all links to the table
+        } else {
+          $("#myCart").empty(); //Clear URL list
+              for(i=0; i<photo_ids.length;i++){
+                   var $formrow = '<tr><td><a href="'+photo_link[i]+'" target="_blank" style="color: yellow">'+photo_link[i]+'</a></td></tr>';
+                  $('#url_list').append($formrow);
+                  }
+
+              $('#myCart').append("<h5>Top 20 Tags</h5><br>");
+              for(i=0; i<20;i += 5){
+                   var formrow = words[i]+' ('+ freqs[i]+'), '+ words[i+1]+' ('+ freqs[i+1]+'), '+ words[i+2]+' ('+ freqs[i+2] +'), '+words[i+3]+' ('+ freqs[i+3] +'), '+ words[i+4]+' ('+ freqs[i+4]+') '
+                  $('#myCart').append(formrow);
+                  }
+
+          }
+      });
+    </script>
+
+</body>
+ 
+</html>

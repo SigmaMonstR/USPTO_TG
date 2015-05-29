@@ -1,0 +1,37 @@
+*,
+*:before,
+*:after
+{
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.island
+{
+   position: absolute; 
+   left:40%;
+   right:0%;
+   display: block;
+   max-width: 60%;
+   margin: 0 auto;
+}
+
+body
+{
+   background-color: #FFFFFF;
+   color: #FFFFFF;
+   font-family: Arial, Calibri, Helvetica, sans-serif;
+   margin: 0;
+   font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1
+{
+   display: block;
+   color: #FCB720;
+}
+
+a
+{
+   color: blue;
+}
