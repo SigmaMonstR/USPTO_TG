@@ -4,8 +4,6 @@
 
 - Index.html
 - js [folder]
-  - bootstrap.min.js - Twitter Bootstrap 
-  - jquery.js - JQuery plugin
   - flickr_api.js - Builds query strings to hit Flickr API
   - utility.js - Pulls variables together to hit the flickr API
   - gallery.js - Handles gallery image methods (e.g. next, previous)
@@ -13,7 +11,6 @@
   - taglist.js - Script to compile tags and push to table
   
 - css [folder]
-  - bootstrap.min.css - Twitter Bootstrap
   - gallery.css - Main image gallery box
   - layout.css - layout of main image box
   - homepage.css - Handles search bar
