@@ -1,0 +1,79 @@
+.nav-steps {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    word-wrap: break-word;
+    margin-left: 0;
+    padding: 0;
+}
+.nav-steps > li {
+    display: table-cell;
+    max-width: 150px;
+    min-width: 75px;
+    text-align: center;
+    padding: 0 10px;
+}
+.nav-steps > li > a,
+.nav-steps > li > span {
+    display: block;
+    font-weight: 600;
+    outline: none;
+    padding-top: 25px;
+    position: relative;
+}
+.nav-steps > li > a:before,
+.nav-steps > li > span:before {
+    background: #004c97;
+    border-radius: 100%;
+    content: "";
+    box-shadow: 0 0 0 3px #f5f5f5;
+    height: 20px;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    top: -2px;
+    width: 20px;
+    z-index: 9999;
+}
+.nav-steps li + li > span:after,
+.nav-steps li + li > a:after {
+    background: #004c97;
+    border: solid #f5f5f5;
+    border-width: 2px 0;
+    box-shadow: -5px 0 0 -2px #004c97, 5px 0 0 -2px #004c97;
+    content: "";
+    height: 8px;
+    left: -50%;
+    margin-left: -14px;
+    margin-right: 6px;
+    position: absolute;
+    right: 50%;
+    top: 4px;
+}
+.nav-steps .active ~ li {
+    color: #707070;
+}
+.nav-steps .active ~ li > span:before,
+.nav-steps .active ~ li > a:before {
+    background-color: #cccccc;
+}
+.nav-steps .active ~ li > span:after,
+.nav-steps .active ~ li > a:after {
+    background-color: #f5f5f5;
+    box-shadow: none;
+}
+
+.nav-steps li .labelparent {
+    position: absolute;
+}
+
+.nav-steps li .steplabel {
+    color: #fff;
+    z-index: 99999;
+    text-emphasis: none;
+    font-style: normal;
+    font-weight: 800;
+    position: absolute;
+    left: -4px;
+    top: -2px;
+}

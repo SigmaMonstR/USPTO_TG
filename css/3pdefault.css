@@ -1,0 +1,78 @@
+/* page css */
+
+div.row.spacer {
+    min-height: 25px;
+}
+
+div.row.spacer-lg {
+    min-height: 200px;
+}
+
+.tpsnav {
+    background-color: #000000;
+    min-height: 50px;
+}
+
+.v {
+    height: 70px;
+    position: relative;
+    margin: 0;
+}
+
+.v > * {
+    height: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.navbar-nav li a {
+    line-height: 50px;
+}
+
+.btn .menuicon {
+    color: #fff;
+    font-size: 35px;
+    text-align: left;
+    position: absolute;
+    left: 35px;
+}
+
+.menubtn {
+    min-width:  100px;
+    padding: 0;
+    margin: 0;
+    z-index: 9999;
+}
+
+.navbar-brand.ptobrand {
+    margin: 0 0 0 10px;
+}
+
+.navbar-default .navbar-toggle {
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #333;
+}
+
+.navbar-nav li.nav a {
+    color: #aaa;
+}
+
+.navbar-nav li.nav.active a {
+    background-color: #333;
+    color: #ddd;
+}
+
+.center {
+    text-align: center
+}
+
+.form-group.pad {
+    padding: 0 10px 0 10px;
+}
