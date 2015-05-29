@@ -13,7 +13,14 @@
   - taglist.js - Script to compile tags and push to table
   
 - css [folder]
-  - 
+  - bootstrap.min.css - Twitter Bootstrap
+  - gallery.css - Main image gallery box
+  - layout.css - layout of main image box
+  - homepage.css - Handles search bar
+  - jc_styles.css - modified 'Agency' theme
+  - normalize.css -  Pre-canned
+  - taglist.css - Tag formats
+  - thumbnails.css - handles thumnbnails in gallery
 
 - font-awesome [folder]
 
